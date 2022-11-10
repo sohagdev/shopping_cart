@@ -44,7 +44,7 @@ function loadCart() {
   const cart = sessionStorage.getItem(SESSION_STORAGE_KEY)
   return JSON.parse(cart) || []
 }
-
+// Removing the cart from the page
 function removeFromCart(id) {
   const existingItem = shoppingCart.find((entry) => entry.id === id)
   if (existingItem == null) return
@@ -71,6 +71,7 @@ function showCart() {
   cart.classList.remove('invisible')
 }
 
+// Rendering all the cart to the page
 function renderCartItem() {
   cartQuantity.innerText = shoppingCart.length
 
